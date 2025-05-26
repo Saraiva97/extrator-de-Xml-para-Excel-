@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
   <head>
-    <title>📄 Extrator XML Saraiva 🚀</title>
+    <title>📄 Extrator XML Saraiva Company 🚀</title>
     <link rel="icon" href="imagens/saraivalogi.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -417,10 +417,10 @@
 
           const data = [
               [
-                  "📅 Data", "📜 Espécie", "🔢 Série", "🔢 Número", "🏢 CNPJ / Série SAT", 
-                  "🏛️ Razão Social", "💰 CFOP", "📦 Produto", "📝 Descrição", "🌐 NCM", 
-                  "🧮 Quantidade", "📏 Unidade", "🏷️ CST/CSOSN ICMS", 
-                  "💲 VALOR UNITARIO", "💵 VALOR TOTAL"
+                  "Data", "Espécie", "Série", "Número", "CNPJ / Série SAT", 
+                  "Razão Social", "CFOP", "Produto", "Descrição", "NCM", 
+                  "Quantidade", "Unidade", "CST/CSOSN ICMS", 
+                  "VALOR UNITARIO", "VALOR TOTAL"
               ]
           ];
 
@@ -564,14 +564,14 @@
           // Adicionando o título no PDF
           doc.setFontSize(18);
           doc.setTextColor(52, 152, 219); // Azul
-          doc.text("📄 Gerado por Saraiva Company", 10, 10);
+          doc.text(" Gerado por Saraiva Company", 10, 10);
           doc.setFontSize(14);
-          doc.text(`🏢 ${nomeEmpresa} - NFe Nº ${numeroNfe}`, 10, 20);
+          doc.text(` ${nomeEmpresa} - NFe Nº ${numeroNfe}`, 10, 20);
 
           // Adicionar Emitente com cor azul
           doc.setTextColor(41, 128, 185); // Azul mais escuro
-          doc.text(`📌 Emitente: ${emitente.nome}`, 10, 40);
-          doc.text(`🔢 CNPJ: ${emitente.cnpj}`, 10, 50);
+          doc.text(` Emitente: ${emitente.nome}`, 10, 40);
+          doc.text(` CNPJ: ${emitente.cnpj}`, 10, 50);
           doc.setTextColor(0, 0, 0); // Retornar para cor preta
 
           // Adicionar Endereço
@@ -579,8 +579,8 @@
 
           // Adicionar Destinatário com CNPJ/CPF em azul
           doc.setTextColor(41, 128, 185); // Azul mais escuro
-          doc.text(`👤 Destinatário: ${destinatario.nome}`, 10, 70);
-          doc.text(`🔢 CNPJ/CPF: ${destinatario.cnpjCpf}`, 10, 80);
+          doc.text(` Destinatário: ${destinatario.nome}`, 10, 70);
+          doc.text(` CNPJ/CPF: ${destinatario.cnpjCpf}`, 10, 80);
           doc.setTextColor(0, 0, 0); // Retornar para cor preta
 
           // Adicionar produtos e somar o valor total
@@ -608,10 +608,10 @@
               addNewPageIfNeeded();  // Verifica se precisa de uma nova página antes de adicionar o próximo produto
               
               // Exibir o produto, quantidade, valor unitário, e subtotal
-              doc.text(`📦 Produto: ${produto.descricao}`, 10, yPosition);
-              doc.text(`🧮 Quantidade: ${produto.quantidade}`, 10, yPosition + 10);
-              doc.text(`💲 Valor Unitário: R$ ${produto.valorUnitario.toFixed(2)}`, 10, yPosition + 20);
-              doc.text(`💰 Subtotal: R$ ${produto.valorTotal.toFixed(2)}`, 10, yPosition + 30);
+              doc.text(`Produto: ${produto.descricao}`, 10, yPosition);
+              doc.text(`Quantidade: ${produto.quantidade}`, 10, yPosition + 10);
+              doc.text(`Valor Unitário: R$ ${produto.valorUnitario.toFixed(2)}`, 10, yPosition + 20);
+              doc.text(`Subtotal: R$ ${produto.valorTotal.toFixed(2)}`, 10, yPosition + 30);
               
               yPosition += 40;  // Ajusta a posição para o próximo item
               totalValue += produto.valorTotal;  // Soma o valor total de cada item (subtotal)
@@ -619,7 +619,7 @@
 
           // Adicionar valor total da NFe no final, em vermelho
           doc.setTextColor(231, 76, 60); // Vermelho
-          doc.text(`💵 Valor Total da NFe: R$ ${totalValue.toFixed(2)}`, 10, yPosition);
+          doc.text(` Valor Total da NFe: R$ ${totalValue.toFixed(2)}`, 10, yPosition);
           doc.setTextColor(0, 0, 0); // Retornar para cor preta
 
           // Gerar PDF
